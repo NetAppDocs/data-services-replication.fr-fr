@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: concept-backup-policies.html 
+keywords: snapvault, archive, archiving, retention, replication, snapshots, volumes 
+summary: Contrairement aux stratégies de miroir, les stratégies de sauvegarde SnapVault répliquent des copies de snapshots spécifiques sur un volume de destination.  Il est important de comprendre comment fonctionnent les politiques de sauvegarde si vous souhaitez utiliser vos propres politiques au lieu des politiques par défaut. 
+---
+= En savoir plus sur les politiques de sauvegarde utilisées dans NetApp Replication
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Contrairement aux stratégies de miroir, les stratégies de sauvegarde (SnapVault) répliquent des copies de snapshots spécifiques sur un volume de destination à l'aide de la réplication NetApp .  Il est important de comprendre comment fonctionnent les politiques de sauvegarde si vous souhaitez utiliser vos propres politiques au lieu des politiques par défaut.
+
+
+
+== Comprendre la relation entre les étiquettes de copie d'instantané et les politiques de sauvegarde
+
+Une politique de snapshot définit la manière dont le système crée des copies instantanées des volumes.  La politique spécifie quand créer les copies instantanées, combien de copies conserver et comment les étiqueter.  Par exemple, un système peut créer une copie instantanée chaque jour à 00h10, conserver les deux copies les plus récentes et les étiqueter « quotidiennes ».
+
+Une politique de sauvegarde inclut des règles qui spécifient les copies de snapshots étiquetées à répliquer vers un volume de destination et le nombre de copies à conserver.  Les étiquettes définies dans une politique de sauvegarde doivent correspondre à une ou plusieurs étiquettes définies dans une politique de snapshot.  Dans le cas contraire, le système ne peut répliquer aucune copie instantanée.
+
+Par exemple, une politique de sauvegarde qui inclut les étiquettes « quotidienne » et « hebdomadaire » entraîne la réplication de copies instantanées qui incluent uniquement ces étiquettes.  Aucune autre copie instantanée n’est répliquée, comme indiqué dans l’image suivante :
+
+image:diagram_replication_snapvault_policy.png["Cette illustration montre une stratégie de snapshot, un volume source, les copies de snapshot créées à partir de la stratégie de snapshot, puis la réplication de ces copies de snapshot vers un volume de destination basé sur une stratégie de sauvegarde, qui spécifie la réplication des copies de snapshot avec les étiquettes « quotidienne » et « hebdomadaire »."]
+
+
+
+== Politiques par défaut et politiques personnalisées
+
+La stratégie de capture instantanée par défaut crée des copies de capture instantanée horaires, quotidiennes et hebdomadaires, en conservant six copies de capture instantanée horaires, deux quotidiennes et deux hebdomadaires.
+
+Vous pouvez facilement utiliser une politique de sauvegarde par défaut avec la politique de snapshot par défaut.  Les stratégies de sauvegarde par défaut répliquent des copies instantanées quotidiennes et hebdomadaires, en conservant sept copies instantanées quotidiennes et 52 copies instantanées hebdomadaires.
+
+Si vous créez des politiques personnalisées, les étiquettes définies par ces politiques doivent correspondre.  Vous pouvez créer des politiques personnalisées à l’aide du Gestionnaire système.

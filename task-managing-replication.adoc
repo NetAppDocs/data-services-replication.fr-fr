@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task-managing-replication.html 
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, source, destination, schedule, relationship, break, resync, max transfer, maximum transfer rate, rate, transfer rate, reverse resync, status, replication status, disaster recovery, DR, archive, archiving, retention 
+summary: Après avoir configuré la réplication des données entre deux systèmes, vous pouvez gérer la planification et la relation de réplication des données à partir de NetApp Replication. 
+---
+= Gérer la réplication des données dans NetApp Replication
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Après avoir configuré la réplication des données entre deux systèmes, vous pouvez gérer la planification et la relation de réplication des données à partir de NetApp Replication.
+
+.Étapes
+. link:task-login-replication.html["Connectez-vous à NetApp Replication"] .
+. Vérifiez l’état des relations de réplication des données pour vérifier qu’elles sont saines.
++
+
+NOTE: Si l'état d'une relation est inactif et que l'état du miroir n'est pas initialisé, vous devez initialiser la relation à partir du système de destination pour que la réplication des données se produise conformément à la planification définie.  Vous pouvez initialiser la relation à l’aide du Gestionnaire système ou de l’interface de ligne de commande (CLI).  Ces états peuvent apparaître lorsque le système de destination échoue puis revient en ligne.
+
+. Sélectionnez le menu d’action pour une relation de volume et choisissez l’une des actions disponibles.
++
+Le tableau suivant décrit les actions disponibles :
+
++
+[cols="15,85"]
+|===
+| Action | Description 
+
+
+| Information | Affiche les détails sur la relation de volume : informations de transfert, informations sur le dernier transfert, détails sur le volume et informations sur la politique de protection attribuée à la relation. 
+
+
+| Casser | Rompt la relation entre les volumes source et de destination et active le volume de destination pour l'accès aux données. Cette option est généralement utilisée lorsque le volume source ne peut pas fournir de données en raison d'événements tels qu'une corruption de données, une suppression accidentelle ou un état hors ligne.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Découvrez comment configurer un volume de destination pour l'accès aux données et réactiver un volume source dans la documentation ONTAP"^] 
+
+
+| Resynchronisation  a| 
+Rétablit une relation rompue entre les volumes et reprend la réplication des données selon la planification définie.
+
+
+NOTE: Lorsque vous resynchronisez les volumes, le contenu du volume de destination est écrasé par le contenu du volume source.
+
+Découvrez comment effectuer une resynchronisation inverse, qui resynchronise les données du volume de destination vers le volume source, accédez à la https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Documentation ONTAP"^] .
+
+
+
+| Resynchronisation inversée | Inverse les rôles des volumes source et de destination. Le contenu du volume source d'origine est écrasé par le contenu du volume de destination. Cela est utile lorsque vous souhaitez réactiver un volume source qui est devenu hors ligne. Toutes les données écrites sur le volume source d’origine entre la dernière réplication de données et le moment où le volume source a été désactivé ne sont pas conservées. 
+
+
+| Modifier le calendrier | Vous permet de choisir une planification différente pour la réplication des données. 
+
+
+| Modifier le taux de transfert maximal | Vous permet de modifier le débit maximal (en kilo-octets par seconde) auquel les données peuvent être transférées. 
+
+
+| Mise à jour | Démarre un transfert incrémentiel pour mettre à jour le volume de destination. 
+
+
+| Supprimer | Supprime la relation de protection des données entre les volumes source et de destination, ce qui signifie que la réplication des données ne se produit plus entre les volumes. Cette action n’active pas le volume de destination pour l’accès aux données. 
+|===
+
+
+.Résultat
+Une fois que vous avez sélectionné une action, NetApp Replication met à jour la relation ou la planification.

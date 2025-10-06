@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: concept-replication-policies.html 
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, disaster recovery, DR 
+summary: 'Vous pourriez avoir besoin d’aide pour choisir une stratégie de réplication lorsque vous configurez la réplication des données dans la console NetApp .  Une politique de réplication définit la manière dont le système de stockage réplique les données d"un volume source vers un volume de destination.' 
+---
+= En savoir plus sur les stratégies de réplication utilisées dans NetApp Replication
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pourriez avoir besoin d’aide pour choisir une politique de réplication lorsque vous configurez la réplication de données dans NetApp Replication.  Une politique de réplication définit la manière dont le système de stockage réplique les données d'un volume source vers un volume de destination.
+
+
+
+== Quelles sont les politiques de réplication ?
+
+Le système d’exploitation ONTAP crée automatiquement des sauvegardes appelées copies instantanées.  Une copie instantanée est une image en lecture seule d’un volume qui capture l’état du système de fichiers à un moment donné.
+
+Lorsque vous répliquez des données entre des systèmes, vous répliquez des copies instantanées d’un volume source vers un volume de destination.  Une stratégie de réplication spécifie les copies de snapshots à répliquer du volume source vers le volume de destination.
+
+
+TIP: Les politiques de réplication sont également appelées politiques de _protection_ car elles sont alimentées par les technologies SnapMirror et SnapVault , qui fournissent une protection contre la reprise après sinistre et une sauvegarde et une récupération de disque à disque.
+
+L'image suivante montre la relation entre les copies instantanées et les politiques de réplication :
+
+image:diagram_replication_policies.png["Cette illustration montre des copies instantanées sur un volume source et une stratégie de réplication qui spécifie la réplication de toutes les copies instantanées ou de copies spécifiques du volume source vers le volume de destination."]
+
+
+
+== Types de politiques de réplication
+
+Il existe trois types de politiques de réplication :
+
+* Une politique _Miroir_ réplique les copies instantanées nouvellement créées sur un volume de destination.
++
+Vous pouvez utiliser ces copies instantanées pour protéger le volume source en prévision d'une reprise après sinistre ou d'une réplication ponctuelle des données.  Vous pouvez activer le volume de destination pour l'accès aux données à tout moment.
+
+* Une politique de _Sauvegarde_ réplique des copies d'instantanés spécifiques sur un volume de destination et les conserve généralement pendant une période plus longue que sur le volume source.
++
+Vous pouvez restaurer les données à partir de ces copies instantanées lorsque les données sont corrompues ou perdues, et les conserver à des fins de conformité aux normes et à d'autres fins liées à la gouvernance.
+
+* Une politique de _miroir et de sauvegarde_ assure à la fois la reprise après sinistre et la conservation à long terme.
++
+Chaque système inclut une politique de miroir et de sauvegarde par défaut, qui fonctionne bien dans de nombreuses situations.  Si vous constatez que vous avez besoin de politiques personnalisées, vous pouvez créer les vôtres à l’aide du Gestionnaire de système.
+
+
+
+Les images suivantes montrent la différence entre les politiques Miroir et Sauvegarde.  Une politique miroir reflète les copies instantanées disponibles sur le volume source.
+
+image:diagram_replication_snapmirror.png["Cette illustration montre des copies instantanées sur un volume source et un volume de destination miroir qui reflète le volume source."]
+
+Une politique de sauvegarde conserve généralement les copies instantanées plus longtemps qu'elles ne sont conservées sur le volume source :
+
+image:diagram_replication_snapvault.png["Cette illustration montre des copies de snapshots sur un volume source et un volume de destination de sauvegarde qui inclut davantage de copies de snapshots, car SnapVault conserve les copies de snapshots pour une rétention à long terme."]

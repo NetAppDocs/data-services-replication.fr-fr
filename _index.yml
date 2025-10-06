@@ -1,0 +1,28 @@
+---
+indexpage:
+  title: Documentation sur la réplication NetApp
+  summary: Répliquez les données entre les systèmes de stockage ONTAP pour prendre
+    en charge la sauvegarde et la reprise après sinistre vers le cloud ou entre les
+    clouds.
+  keywords: replicate, storage systems, disaster recovery, cloud
+  lead: Répliquez les données entre les systèmes de stockage ONTAP pour prendre en
+    charge la sauvegarde et la reprise après sinistre vers le cloud ou entre les clouds.
+  tiles:
+  - title: Commencer
+    links:
+    - title: En savoir plus sur la réplication NetApp
+      url: concept-replication.html
+    - title: Configurer la réplication des données
+      url: task-replicating-data.html
+  - title: Utiliser la réplication NetApp
+    links:
+    - title: Gérer la réplication des données
+      url: task-managing-replication.html
+  - title: Blogs et communauté
+    links:
+    - title: Console NetApp
+      url: https://www.netapp.com/console
+    - title: Services de données NetApp
+      url: https://www.netapp.com/data-services/
+    - title: Communauté NetApp
+      url: https://community.netapp.com

@@ -1,0 +1,45 @@
+---
+settings:
+  name: NetApp Replication
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: Documentation sur la réplication NetApp
+    url: "/index.html"
+  - title: Notes de version
+    entries:
+    - title: Quoi de neuf
+      url: "/whats-new.html"
+  - title: Commencer
+    entries:
+    - title: En savoir plus sur la réplication NetApp
+      url: "/concept-replication.html"
+    - title: Connectez-vous à NetApp Replication
+      url: "/task-login-replication.html"
+    - title: Configurer la réplication des données
+      url: "/task-replicating-data.html"
+  - title: Gérer la réplication des données
+    url: "/task-managing-replication.html"
+  - title: Apprendre encore plus
+    entries:
+    - title: En savoir plus sur les politiques de réplication
+      url: "/concept-replication-policies.html"
+    - title: En savoir plus sur les politiques de sauvegarde
+      url: "/concept-backup-policies.html"
+  - title: Connaissances et soutien
+    entries:
+    - title: Inscrivez-vous pour obtenir de l'aide
+      url: "/task-support-registration.html"
+    - title: Obtenir de l'aide
+      url: "/task-get-help.html"
+  - title: Mentions légales
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

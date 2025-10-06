@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task-login-replication.html 
+keywords: copy and sync, NetApp Replication, log in to Replication, NetApp BlueXP, BlueXP Replication, NetApp Console 
+summary: Utilisez la console NetApp pour vous connecter à NetApp Replication. 
+---
+= Connectez-vous à NetApp Replication
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilisez la console NetApp pour vous connecter à NetApp Replication.
+
+Pour vous connecter à la console, vous pouvez utiliser vos informations d'identification du site de support NetApp ou vous inscrire pour une connexion au cloud NetApp à l'aide de votre e-mail et d'un mot de passe. https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["En savoir plus sur la connexion"^] .
+
+.Étapes
+. Ouvrez un navigateur Web et accédez à la https://console.netapp.com/["Console NetApp"^] .
++
+La page de connexion à la console NetApp s’affiche.
+
+. Connectez-vous à la console.
+. Dans la navigation de gauche de la console, sélectionnez *Protection* > *Réplication*.
+
