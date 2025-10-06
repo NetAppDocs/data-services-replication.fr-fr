@@ -14,7 +14,7 @@ summary: Vous pouvez répliquer des données entre des systèmes ONTAP en choisi
 
 
 [role="lead"]
-À l'aide de la réplication NetApp , répliquez les données entre les systèmes ONTAP en choisissant une réplication de données unique pour le transfert de données ou une planification récurrente pour la reprise après sinistre ou la conservation à long terme.  Par exemple, vous pouvez configurer la réplication des données d’un système ONTAP local vers Cloud Volumes ONTAP pour la reprise après sinistre.
+À l'aide de la NetApp Replication, répliquez les données entre les systèmes ONTAP en choisissant une réplication de données unique pour le transfert de données ou une planification récurrente pour la reprise après sinistre ou la conservation à long terme.  Par exemple, vous pouvez configurer la réplication des données d’un système ONTAP local vers Cloud Volumes ONTAP pour la reprise après sinistre.
 
 
 
@@ -54,7 +54,7 @@ Exigences spécifiques aux clusters ONTAP::
 +
 --
 * Une licence SnapMirror active doit être installée.
-* Si le cluster se trouve dans vos locaux, vous devez disposer d’une connexion entre votre réseau d’entreprise et votre réseau virtuel dans le cloud. Il s’agit généralement d’une connexion VPN.
+* Si le cluster se trouve dans vos locaux, vous devez disposer d’une connexion entre votre réseau d’entreprise et votre réseau virtuel dans le cloud.  Il s’agit généralement d’une connexion VPN.
 * Les clusters ONTAP doivent répondre à des exigences supplémentaires en matière de sous-réseau, de port, de pare-feu et de cluster.
 +
 https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html#connectivity-requirements["Consultez les conditions préalables pour le peering de cluster dans la documentation ONTAP"^]

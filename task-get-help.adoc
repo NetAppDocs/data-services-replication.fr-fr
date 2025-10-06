@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-get-help.html 
 keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue 
-summary: 'NetApp fournit une prise en charge de la console NetApp de différentes manières. De nombreuses options d"auto-assistance gratuites sont disponibles 24h/24 et 7j/7, telles que des articles de la base de connaissances (KB) et un forum communautaire. Votre inscription au support inclut une assistance technique à distance via un ticket web.' 
+summary: 'NetApp fournit une prise en charge de la NetApp Console de différentes manières. De nombreuses options d"auto-assistance gratuites sont disponibles 24h/24 et 7j/7, telles que des articles de la base de connaissances (KB) et un forum communautaire. Votre inscription au support inclut une assistance technique à distance via un ticket web.' 
 ---
 = Obtenir de l'aide
 :allow-uri-read: 
@@ -163,6 +163,6 @@ Les pièces jointes sont limitées à 25 Mo par fichier. Les extensions de fichi
 
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-actions.png["Une capture d'écran qui montre les actions que vous pouvez effectuer après avoir sélectionné le menu dans la dernière colonne du tableau."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-actions.png["Une capture d'écran qui montre les actions que vous pouvez entreprendre après avoir sélectionné le menu dans la dernière colonne du tableau."]
 
 

@@ -14,7 +14,7 @@ summary: Contrairement aux stratégies de miroir, les stratégies de sauvegarde 
 
 
 [role="lead"]
-Contrairement aux stratégies de miroir, les stratégies de sauvegarde (SnapVault) répliquent des copies de snapshots spécifiques sur un volume de destination à l'aide de la réplication NetApp .  Il est important de comprendre comment fonctionnent les politiques de sauvegarde si vous souhaitez utiliser vos propres politiques au lieu des politiques par défaut.
+Contrairement aux stratégies de miroir, les stratégies de sauvegarde (SnapVault) répliquent des copies de snapshots spécifiques sur un volume de destination à l'aide de la NetApp Replication.  Il est important de comprendre comment fonctionnent les politiques de sauvegarde si vous souhaitez utiliser vos propres politiques au lieu des politiques par défaut.
 
 
 

@@ -28,7 +28,7 @@ Il existe deux formes d'inscription pour activer le droit au support :
 
 * Enregistrement du numéro de série de votre compte BlueXP (votre numéro de série à 20 chiffres 960xxxxxxxxx situé sur la page Ressources d'assistance dans BlueXP).
 +
-Il s'agit de votre identifiant d'abonnement d'assistance unique pour tout service au sein de BlueXP. Chaque abonnement de support au niveau du compte BlueXP doit être enregistré.
+Il s'agit de votre identifiant d'abonnement d'assistance unique pour tout service au sein de BlueXP. Chaque abonnement d'assistance au niveau du compte BlueXP doit être enregistré.
 
 * Enregistrement des numéros de série Cloud Volumes ONTAP associés à un abonnement sur la place de marché de votre fournisseur de cloud (il s'agit de numéros de série 909201xxxxxxxx à 20 chiffres).
 +

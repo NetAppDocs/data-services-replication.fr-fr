@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-replication-policies.html 
 keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, disaster recovery, DR 
-summary: 'Vous pourriez avoir besoin d’aide pour choisir une stratégie de réplication lorsque vous configurez la réplication des données dans la console NetApp .  Une politique de réplication définit la manière dont le système de stockage réplique les données d"un volume source vers un volume de destination.' 
+summary: 'Vous pourriez avoir besoin d’aide pour choisir une stratégie de réplication lorsque vous configurez la réplication des données dans la NetApp Console.  Une politique de réplication définit la manière dont le système de stockage réplique les données d"un volume source vers un volume de destination.' 
 ---
 = En savoir plus sur les stratégies de réplication utilisées dans NetApp Replication
 :hardbreaks:

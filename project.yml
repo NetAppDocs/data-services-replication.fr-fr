@@ -10,7 +10,7 @@ settings:
   langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: Documentation sur la réplication NetApp
+  - title: Documentation sur la NetApp Replication
     url: "/index.html"
   - title: Notes de version
     entries:
@@ -18,7 +18,7 @@ sidebar:
       url: "/whats-new.html"
   - title: Commencer
     entries:
-    - title: En savoir plus sur la réplication NetApp
+    - title: En savoir plus sur la NetApp Replication
       url: "/concept-replication.html"
     - title: Connectez-vous à NetApp Replication
       url: "/task-login-replication.html"
