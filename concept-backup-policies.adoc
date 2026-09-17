@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-backup-policies.html 
 keywords: snapvault, archive, archiving, retention, replication, snapshots, volumes 
-summary: Contrairement aux stratégies de miroir, les stratégies de sauvegarde SnapVault répliquent des copies de snapshots spécifiques sur un volume de destination.  Il est important de comprendre comment fonctionnent les politiques de sauvegarde si vous souhaitez utiliser vos propres politiques au lieu des politiques par défaut. 
+summary: 'Contrairement aux règles de mise en miroir, les règles de sauvegarde SnapVault répliquent des copies d"instantanés spécifiques vers un volume de destination. Il est important de comprendre comment fonctionnent les règles de sauvegarde si vous souhaitez utiliser vos propres règles au lieu des règles par défaut.' 
 ---
 = En savoir plus sur les politiques de sauvegarde utilisées dans NetApp Replication
 :hardbreaks:
@@ -23,11 +23,11 @@ Contrairement aux stratégies de miroir, les stratégies de sauvegarde (SnapVaul
 
 Une politique de snapshot définit la manière dont le système crée des copies instantanées des volumes.  La politique spécifie quand créer les copies instantanées, combien de copies conserver et comment les étiqueter.  Par exemple, un système peut créer une copie instantanée chaque jour à 00h10, conserver les deux copies les plus récentes et les étiqueter « quotidiennes ».
 
-Une politique de sauvegarde inclut des règles qui spécifient les copies de snapshots étiquetées à répliquer vers un volume de destination et le nombre de copies à conserver.  Les étiquettes définies dans une politique de sauvegarde doivent correspondre à une ou plusieurs étiquettes définies dans une politique de snapshot.  Dans le cas contraire, le système ne peut répliquer aucune copie instantanée.
+Une règle de sauvegarde comprend des règles qui spécifient quelles copies d’instantanés étiquetées doivent être répliquées vers un volume de destination et combien de copies doivent être conservées. Les étiquettes définies dans une règle de sauvegarde doivent correspondre à une ou plusieurs étiquettes définies dans une règle d’instantanés. Sinon, le système ne peut répliquer aucune copie d’instantané.
 
-Par exemple, une politique de sauvegarde qui inclut les étiquettes « quotidienne » et « hebdomadaire » entraîne la réplication de copies instantanées qui incluent uniquement ces étiquettes.  Aucune autre copie instantanée n’est répliquée, comme indiqué dans l’image suivante :
+Par exemple, une règle de sauvegarde incluant les étiquettes « daily » et « weekly » entraîne la réplication des copies instantanées ne comportant que ces étiquettes. Aucune autre copie instantanée n'est répliquée, comme illustré dans l'image suivante :
 
-image:diagram_replication_snapvault_policy.png["Illustration montrant une règle de snapshot, un volume source, les copies de snapshot créées à partir de la règle de snapshot, puis la réplication de ces copies de snapshot vers un volume de destination en fonction d'une règle de sauvegarde, qui spécifie la réplication des copies de snapshot avec les étiquettes « daily » et « weekly »."]
+image:diagram_replication_snapvault_policy.png["Illustration montrant une stratégie de snapshot, un volume source, les copies de snapshot créées à partir de la stratégie de snapshot, puis la réplication de ces copies de snapshot vers un volume de destination en fonction d'une règle de sauvegarde, qui spécifie la réplication des copies de snapshot avec les étiquettes « daily » et « weekly »."]
 
 
 
@@ -36,6 +36,6 @@ image:diagram_replication_snapvault_policy.png["Illustration montrant une règle
 
 La stratégie de capture instantanée par défaut crée des copies de capture instantanée horaires, quotidiennes et hebdomadaires, en conservant six copies de capture instantanée horaires, deux quotidiennes et deux hebdomadaires.
 
-Vous pouvez facilement utiliser une politique de sauvegarde par défaut avec la politique de snapshot par défaut.  Les stratégies de sauvegarde par défaut répliquent des copies instantanées quotidiennes et hebdomadaires, en conservant sept copies instantanées quotidiennes et 52 copies instantanées hebdomadaires.
+Vous pouvez facilement utiliser une règle de sauvegarde par défaut avec la stratégie de snapshots par défaut. Les règles de sauvegarde par défaut répliquent des copies de snapshots quotidiennes et hebdomadaires ; elles conservent 7 copies de snapshots quotidiennes et 52 copies de snapshots hebdomadaires.
 
 Si vous créez des politiques personnalisées, les étiquettes définies par ces politiques doivent correspondre.  Vous pouvez créer des politiques personnalisées à l’aide du Gestionnaire système.
