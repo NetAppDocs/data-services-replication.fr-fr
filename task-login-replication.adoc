@@ -20,9 +20,6 @@ Pour vous connecter à la Console, vous pouvez utiliser vos identifiants du site
 
 .Étapes
 . Ouvrez un navigateur Web et accédez à la https://console.netapp.com/["NetApp Console"^] .
-+
-La page de connexion à la NetApp Console s’affiche.
-
 . Connectez-vous à la console.
 . Dans la navigation de gauche de la console, sélectionnez *Protection* > *Réplication*.
 

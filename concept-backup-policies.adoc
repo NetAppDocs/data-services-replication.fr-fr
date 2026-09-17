@@ -27,7 +27,7 @@ Une politique de sauvegarde inclut des règles qui spécifient les copies de sna
 
 Par exemple, une politique de sauvegarde qui inclut les étiquettes « quotidienne » et « hebdomadaire » entraîne la réplication de copies instantanées qui incluent uniquement ces étiquettes.  Aucune autre copie instantanée n’est répliquée, comme indiqué dans l’image suivante :
 
-image:diagram_replication_snapvault_policy.png["Cette illustration montre une stratégie de snapshot, un volume source, les copies de snapshot créées à partir de la stratégie de snapshot, puis la réplication de ces copies de snapshot vers un volume de destination basé sur une stratégie de sauvegarde, qui spécifie la réplication des copies de snapshot avec les étiquettes « quotidienne » et « hebdomadaire »."]
+image:diagram_replication_snapvault_policy.png["Illustration montrant une règle de snapshot, un volume source, les copies de snapshot créées à partir de la règle de snapshot, puis la réplication de ces copies de snapshot vers un volume de destination en fonction d'une règle de sauvegarde, qui spécifie la réplication des copies de snapshot avec les étiquettes « daily » et « weekly »."]
 
 
 

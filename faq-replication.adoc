@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: faq-replication.html 
+keywords: faq, frequently asked questions, snapmirror, snapvault, replication policies, backup policies, data protection, cloud volumes ontap, amazon fsx, ontap, mirror, backup, cascade, fanout 
+summary: Consultez la foire aux questions sur NetApp Replication, notamment les configurations prises en charge et la résolution des problèmes courants. 
+---
+= FAQ pour NetApp Replication
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette FAQ répond aux questions courantes concernant NetApp Replication. Elle se concentre sur les concepts, la terminologie et le comportement utiles lors de la configuration, de la gestion et du dépannage des relations de réplication entre les systèmes ONTAP, Cloud Volumes ONTAP et Amazon FSx for ONTAP.
+
+
+
+[[general-concepts]]
+== Concepts généraux
+
+.Quelles combinaisons de systèmes source et cible Replication prend-il en charge ?
+La réplication prend en charge Amazon FSx for ONTAP, Cloud Volumes ONTAP et ONTAP sur site. Vous pouvez configurer la réplication entre ces trois systèmes.
+
+.Quelles configurations de protection des données la réplication prend-elle en charge ?
+La réplication prend en charge trois configurations :
+
+* *Simple* : la réplication s’effectue du volume A au volume B.
+* *Fanout* : la réplication s’effectue du volume A vers plusieurs destinations.
+* *Cascade* : la réplication s’effectue du volume A au volume B, puis du volume B au volume C.
+
+
+.Que se passe-t-il lors du premier transfert de réplication par rapport aux transferts suivants ?
+Le transfert de base comprend une copie intégrale des données sources. Les transferts suivants ne contiennent que des copies différentielles (incrémentales) des données sources.
+
+.La réplication a-t-elle un coût d'utilisation ?
+NetApp ne vous facture pas l'utilisation de la réplication elle-même, mais vous devez vérifier auprès de votre fournisseur de cloud les frais applicables aux flux de données entrants et sortants. La NetApp Console engendre des frais lorsque vous déployez des agents Console pour vous connecter à vos systèmes de stockage ou services de données ; certains autres services de données NetApp accessibles depuis la Console sont soumis à licence ou à abonnement.
+
+.Ai-je besoin d'une licence ou d'un abonnement pour utiliser Replication ?
+Vous n'avez pas besoin de licence ni d’abonnement pour commencer à utiliser la NetApp Console ou NetApp Replication. Pour les configurations ONTAP sur site, une licence SnapMirror active doit être installée.
+
+
+
+[[replication-policies]]
+== Politiques de réplication
+
+.Quelle est la différence entre une règle de mise en miroir et une règle de sauvegarde ?
+Il existe trois types de politiques de réplication :
+
+* *Miroir* : réplique les copies d’instantanés nouvellement créées vers un volume de destination, utile pour la préparation à la reprise après sinistre ou pour une réplication des données ponctuelle ; vous pouvez activer le volume de destination pour l’accès aux données à tout moment.
+* *Sauvegarde* : réplique des copies d’instantanés étiquetées spécifiques vers un volume de destination et les conserve généralement plus longtemps que sur le volume source, utile pour restaurer des données corrompues ou perdues et à des fins de conformité/gouvernance.
+* *Miroir et sauvegarde* : combine la reprise après sinistre et la conservation à long terme, et constitue la règle de sauvegarde par défaut incluse avec chaque système.
+
+
+Si les règles par défaut ne répondent pas à vos besoins, vous pouvez créer des règles personnalisées à l'aide de System Manager.
+
+.Pourquoi ma règle de sauvegarde ne réplique-t-elle aucune copie instantanée ?
+Une règle de sauvegarde ne réplique que les copies d'instantanés dont les étiquettes correspondent aux étiquettes définies dans la règle d'instantanés du volume source. Si les étiquettes de votre règle de sauvegarde personnalisée ne correspondent à aucune étiquette de la règle d'instantanés, le système ne peut répliquer aucune copie d'instantané. Par exemple, une règle de sauvegarde avec les étiquettes « daily » et « weekly » ne réplique que les copies d'instantanés portant ces étiquettes.
+
+.Quels sont les paramètres de conservation des instantanés par défaut si vous utilisez les règles de sauvegarde par défaut ?
+La stratégie de snapshot par défaut crée des copies de snapshot horaires, quotidiennes et hebdomadaires, et conserve six copies horaires, deux quotidiennes et deux hebdomadaires. Les règles de sauvegarde par défaut répliquent les copies de snapshot quotidiennes et hebdomadaires ; elles conservent 7 copies quotidiennes et 52 copies hebdomadaires.
+
+
+
+[[setting-up-replication]]
+== Mise en place de la réplication
+
+.Que dois-je vérifier avant de configurer la réplication des données ?
+Avant de répliquer les données, confirmez les points suivants :
+
+* Les systèmes source et cible existent déjà (ou créez-les).
+* Vérifiez que les volumes source et de destination exécutent des versions ONTAP compatibles ; voir link:https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["versions ONTAP compatibles"^].
+* Assurez-vous d'avoir respecté les exigences spécifiques au système pour link:task-replicating-data.html["exigences de réplication des données"].
+
+
+.Quelles sont les conditions requises pour que la relation entre clusters fonctionne correctement entre les LIF inter-clusters ?
+Le réseau intercluster doit être configuré de manière à ce que les clusters homologues disposent d'une connectivité maillée complète, c'est-à-dire que chaque paire de clusters dans une relation entre clusters dispose d'une connectivité entre toutes leurs LIF intercluster. Cela s'applique lorsqu'un cluster ONTAP avec plusieurs LIF est la source ou la destination.
+
+.Puis-je créer une planification de réplication personnalisée ?
+Plusieurs planifications par défaut sont disponibles lors de la configuration de la réplication. Si vous souhaitez une planification différente, vous devez créer une nouvelle planification sur le cluster de destination à l'aide de System Manager.
+
+
+
+[[managing-replication-relationships]]
+== Gestion des relations de réplication
+
+.Que signifie le fait qu'une relation de réplication affiche un statut inactif et un état de miroir non initialisé ?
+Cela peut se produire lorsque le système de destination tombe en panne puis revient en ligne. Vous devez initialiser la relation depuis le système de destination à l'aide de System Manager ou de la CLI afin que la réplication des données reprenne selon la planification définie.
+
+.Quelle est la différence entre les actions de break, de resynchronisation et de resynchronisation inversée ?
+Ces actions ont des effets différents :
+
+* *Interruption* : rompt la relation entre les volumes source et de destination et active le volume de destination pour l'accès aux données. Généralement utilisé lorsque le volume source ne peut pas fournir de données en raison d’une corruption, d’une suppression ou d’un état hors ligne.
+* *Resynchronisation* : rétablit une relation interrompue et reprend la réplication selon la planification ; le contenu du volume de destination est écrasé par le contenu du volume source.
+* *Resynchronisation inversée* : inverse les rôles des volumes source et de destination, en écrasant le contenu du volume source d'origine avec celui du volume de destination. Les données écrites sur le volume source d'origine entre la dernière réplication et sa mise hors ligne ne sont pas conservées.
+
+
+.Que se passe-t-il si vous supprimez une relation de réplication ?
+La suppression de la relation de protection des données entre les volumes source et de destination met fin à la réplication des données entre les volumes, supprime la relation SnapMirror du site de destination et libère la relation du site source. Elle rompt également la relation SnapMirror, faisant brièvement du volume de destination le site principal pour les opérations de lecture/écriture afin que le volume de destination puisse être utilisé indépendamment après la suppression de la réplication.
+
+.Pourquoi devriez-vous limiter le débit de transfert maximal au lieu de le laisser illimité ?
+Un débit de transfert illimité peut nuire aux performances des autres applications et à votre connexion Internet. Vous devez limiter le débit de transfert maximal (exprimé en mégaoctets par seconde) lors de la configuration de la réplication, et vous pouvez le modifier ultérieurement depuis la page État de la réplication.

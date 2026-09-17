@@ -37,6 +37,8 @@ sidebar:
       url: "/concept-backup-policies.html"
   - title: Connaissances et soutien
     entries:
+    - title: FAQ
+      url: "/faq-replication.html"
     - title: Inscrivez-vous pour obtenir de l'aide
       url: "/task-support-registration.html"
     - title: Obtenir de l'aide

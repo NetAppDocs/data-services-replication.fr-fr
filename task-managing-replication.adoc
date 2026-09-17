@@ -29,7 +29,7 @@ Pour gérer les relations de réplication avec les systèmes de fichiers FSx for
 . Vérifiez l’état des relations de réplication des données pour vérifier qu’elles sont saines.
 +
 
-NOTE: Si l'état d'une relation est inactif et que l'état miroir n'est pas initialisé, vous devez initialiser la relation à partir du système de destination pour que la réplication des données se produise conformément à la planification définie.  Vous pouvez initialiser la relation à l’aide du Gestionnaire système ou de l’interface de ligne de commande (CLI).  Ces états peuvent apparaître lorsque le système de destination échoue puis revient en ligne.
+NOTE: Si l'état d'une relation est inactif et que l'état du miroir n'est pas initialisé, vous devez initialiser la relation depuis le système de destination pour que la réplication des données s'effectue selon la planification définie. Vous pouvez initialiser la relation à l'aide de System Manager ou de l'interface de ligne de commande (CLI). Ces états peuvent apparaître lorsque le système de destination tombe en panne puis revient en ligne.
 
 . Sélectionnez le menu d’action pour une relation de volume et choisissez l’une des actions disponibles.
 +
@@ -69,7 +69,12 @@ Découvrez comment effectuer une resynchronisation inverse, qui resynchronise le
 | Mise à jour | Démarre un transfert incrémentiel pour mettre à jour le volume de destination. 
 
 
-| Supprimer | Supprime la relation de protection des données entre les volumes source et de destination, ce qui signifie que la réplication des données ne se produit plus entre les volumes.  Cette action n’active pas le volume de destination pour l’accès aux données. 
+| Supprimer  a| 
+Supprimez la relation de protection des données entre les volumes source et de destination. Cela met fin à la réplication des données entre les volumes, supprime la relation SnapMirror du site de destination et libère la relation du site source.
+
+
+NOTE: La suppression de la relation rompt également la relation SnapMirror, ce qui fait brièvement du volume de destination le site principal pour les opérations de lecture/écriture afin de garantir que la destination puisse être utilisée indépendamment après la suppression de la réplication.
+
 |===
 
 
