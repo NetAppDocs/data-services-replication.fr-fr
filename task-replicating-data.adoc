@@ -18,6 +18,7 @@ summary: Vous pouvez répliquer des données entre des systèmes ONTAP en choisi
 
 
 
+[[step-1-review-data-replication-requirements]]
 == Étape 1 : Examiner les exigences de réplication des données
 
 Avant de pouvoir répliquer des données, vous devez confirmer que des exigences spécifiques sont respectées pour Cloud Volumes ONTAP, les clusters ONTAP sur site ou Amazon FSx for ONTAP.
@@ -25,10 +26,10 @@ Avant de pouvoir répliquer des données, vous devez confirmer que des exigences
 systèmes:: Si vous ne l’avez pas déjà fait, vous devez créer les systèmes pour la source et la cible dans la relation de réplication de données.
 +
 --
-* https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Créer un système Amazon FSx pour ONTAP"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-overview-cvo.html["Créer un système Cloud Volumes ONTAP"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-adding-systems.html["Ajouter des systèmes Cloud Volumes ONTAP existants"^]
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Découvrez les clusters ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-fsx-ontap/start/task-getting-started-fsx.html["Créer un système Amazon FSx pour ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-overview-cvo.html["Créer un système Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-adding-systems.html["Ajouter des systèmes Cloud Volumes ONTAP existants"^]
+* https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Découvrez les clusters ONTAP"^]
 
 
 --
@@ -74,6 +75,7 @@ Exigences spécifiques à Amazon FSx pour ONTAP::
 
 
 
+[[step-2-replicate-data-between-systems]]
 == Étape 2 : Répliquer les données entre les systèmes
 
 Vous pouvez répliquer des données en choisissant une réplication de données unique, qui peut vous aider à déplacer des données vers et depuis le cloud, ou une planification récurrente, qui peut faciliter la reprise après sinistre ou la conservation à long terme.

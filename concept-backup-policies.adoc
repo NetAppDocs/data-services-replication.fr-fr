@@ -18,6 +18,7 @@ Contrairement aux stratégies de miroir, les stratégies de sauvegarde (SnapVaul
 
 
 
+[[understanding-the-relationship-between-snapshot-copy-labels-and-backup-policies]]
 == Comprendre la relation entre les étiquettes de copie d'instantané et les politiques de sauvegarde
 
 Une politique de snapshot définit la manière dont le système crée des copies instantanées des volumes.  La politique spécifie quand créer les copies instantanées, combien de copies conserver et comment les étiqueter.  Par exemple, un système peut créer une copie instantanée chaque jour à 00h10, conserver les deux copies les plus récentes et les étiqueter « quotidiennes ».
@@ -30,6 +31,7 @@ image:diagram_replication_snapvault_policy.png["Cette illustration montre une st
 
 
 
+[[default-policies-and-custom-policies]]
 == Politiques par défaut et politiques personnalisées
 
 La stratégie de capture instantanée par défaut crée des copies de capture instantanée horaires, quotidiennes et hebdomadaires, en conservant six copies de capture instantanée horaires, deux quotidiennes et deux hebdomadaires.

@@ -18,6 +18,7 @@ NetApp SnapMirror réplique les données à grande vitesse sur LAN ou WAN, vous 
 
 
 
+[[netapp-console]]
 == NetApp Console
 
 La NetApp Replication est accessible via la NetApp Console.
@@ -26,10 +27,11 @@ La NetApp Console fournit une gestion centralisée des services de stockage et d
 
 Vous n'avez pas besoin de licence ni d'abonnement pour commencer à utiliser NetApp Console et vous n'encourez des frais que lorsque vous devez déployer des agents de console dans votre cloud pour garantir la connectivité à vos systèmes de stockage ou à vos services de données NetApp . Cependant, certains services de données NetApp accessibles depuis la console sont sous licence ou basés sur un abonnement.
 
-En savoir plus sur le https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"] .
+Apprenez-en davantage sur le https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Console"].
 
 
 
+[[features]]
 == Caractéristiques
 
 * Répliquez les données entre les systèmes de stockage ONTAP pour prendre en charge la sauvegarde et la reprise après sinistre vers le cloud ou entre les clouds.
@@ -39,12 +41,14 @@ En savoir plus sur le https://docs.netapp.com/us-en/bluexp-setup-admin/concept-o
 
 
 
+[[cost]]
 == Coût
 
 NetApp ne vous facture pas l'utilisation de NetApp Replication, mais vous devrez vérifier auprès de votre fournisseur de cloud les frais d'entrée et de sortie de données applicables.
 
 
 
+[[supported-systems]]
 == Systèmes pris en charge
 
 NetApp Replication permet la réplication des données entre les types de systèmes suivants.
@@ -79,6 +83,7 @@ NetApp Replication permet la réplication des données entre les types de systè
 |===
 
 
+[[how-data-replication-works]]
 == Comment fonctionne la réplication des données
 
 NetApp Replication simplifie la réplication des données entre des volumes sur des systèmes ONTAP distincts à l'aide des technologies SnapMirror et SnapVault .  Il vous suffit d’identifier le volume source et le volume de destination, puis de choisir une politique et une planification de réplication.
@@ -90,6 +95,7 @@ NOTE: Le transfert de base comprend une copie complète des données sources.  L
 
 
 
+[[supported-data-protection-configurations]]
 == Configurations de protection des données prises en charge
 
 NetApp Replication prend en charge les configurations de protection des données simples, en éventail et en cascade :
@@ -101,9 +107,10 @@ NetApp Replication prend en charge les configurations de protection des données
 
 
 
+[[replicate-data-using-netapp-backup-and-recovery]]
 == Répliquer les données à l'aide de NetApp Backup and Recovery
 
-À partir de la version 3.9.31 de l'agent NetApp Console , NetApp Backup and Recovery vous permet de répliquer des données entre des volumes sur des systèmes ONTAP distincts à l'aide des technologies SnapMirror et SnapVault .  Ainsi, si vous envisagez de répliquer des données vers d'autres systèmes ONTAP et que vous souhaitez également créer des sauvegardes des mêmes données vers le stockage d'objets, vous souhaiterez peut-être utiliser https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["NetApp Backup and Recovery"^] afin que vous puissiez gérer vos besoins en matière de protection des données avec un service unique.
+À partir de la version 3.9.31 de l’agent NetApp Console, NetApp Backup and Recovery vous permet de répliquer des données entre des volumes sur des systèmes ONTAP distincts en utilisant les technologies SnapMirror et SnapVault. Ainsi, si vous prévoyez de répliquer des données vers d’autres systèmes ONTAP et que vous souhaitez également créer des sauvegardes de ces mêmes données sur un stockage objet, vous pouvez utiliser  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["NetApp Backup and Recovery"^] afin de gérer vos besoins en matière de protection des données avec un service unique.
 
 Actuellement, la fonctionnalité suivante est uniquement prise en charge dans NetApp Replication , et non lors de l'utilisation de la fonction de réplication de NetApp Backup and Recovery.
 

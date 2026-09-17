@@ -18,6 +18,7 @@ Vous pourriez avoir besoin d’aide pour choisir une politique de réplication l
 
 
 
+[[what-replication-policies-do]]
 == Quelles sont les politiques de réplication ?
 
 Le système d’exploitation ONTAP crée automatiquement des sauvegardes appelées copies instantanées.  Une copie instantanée est une image en lecture seule d’un volume qui capture l’état du système de fichiers à un moment donné.
@@ -33,6 +34,7 @@ image:diagram_replication_policies.png["Cette illustration montre des copies ins
 
 
 
+[[types-of-replication-policies]]
 == Types de politiques de réplication
 
 Il existe trois types de politiques de réplication :

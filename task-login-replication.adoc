@@ -16,7 +16,7 @@ summary: Utilisez la NetApp Console pour vous connecter à NetApp Replication.
 [role="lead"]
 Utilisez la NetApp Console pour vous connecter à NetApp Replication.
 
-Pour vous connecter à la console, vous pouvez utiliser vos informations d'identification du site de support NetApp ou vous inscrire pour une connexion au cloud NetApp à l'aide de votre e-mail et d'un mot de passe. https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["En savoir plus sur la connexion"^] .
+Pour vous connecter à la Console, vous pouvez utiliser vos identifiants du site de support NetApp ou vous inscrire à une connexion cloud NetApp en utilisant votre adresse e-mail et un mot de passe. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["En savoir plus sur la connexion"^]
 
 .Étapes
 . Ouvrez un navigateur Web et accédez à la https://console.netapp.com/["NetApp Console"^] .
