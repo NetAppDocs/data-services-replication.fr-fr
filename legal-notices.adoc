@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= Mentions légales
+= Mentions légales relatives à NetApp Replication
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
